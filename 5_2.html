@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+
+</head>
+
+<body>
+    <h1>My restaurant </h1>
+    <nav>
+        <a href="">Home</a>
+        <a href="">Meals</a>
+        <a href="">About</a>
+
+    </nav>
+
+    <section>
+        <div id="main"> </div>
+    </section>
+
+
+
+    <template>
+        <article>
+            <h1>NAME</h1>
+            <h2>PRICE</h2>
+            <p>DESCRIPTION</p>
+        </article>
+
+
+    </template>
+
+    <script>
+        const template = document.querySelector("template").content;
+        const main = document.querySelector("main");
+        let clone = template.cloneNode(true);
+
+        clone.querySelector("h1").textContent = "New header";
+        clone.querySelector("h2").textContent = "New subheader";
+        clone.querySelector("p").textContent = "New body text";
+
+        main.appendChild(clone);
+
+        clone = template.cloneNode(true);
+
+        clone.querySelector("h1").textContent = "2nd header";
+        clone.querySelector("h2").textContent = "2nd subheader";
+        clone.querySelector("p").textContent = "2nd body text";
+
+        main.appendChild(clone);
+
+
+        clone = template.cloneNode(true);
+
+
+
+        main.appendChild(clone);
+
+    </script>
+
+</body>
+
+</html>
